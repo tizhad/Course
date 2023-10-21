@@ -1,0 +1,11 @@
+<div class="container mx-auto mt-4">
+    <h3>Search Result for '{{searchQuery}}'</h3>
+    <div class="row"  *ngIf="filteredCourses">
+        <div class="col-lg-3 mb-4" *ngFor="let course of filteredCourses">
+            <app-course [course]="course" (selectedCourseEmit)="setSelectedCourse(course)"></app-course>
+        </div>
+    </div>
+    <div *ngIf="!filteredCourses">
+        <h3>No result for your search!</h3>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="col-md-12 m-auto form-style">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-block needs-validation">
+        <div class="col-md-12 position-relative">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" id="validationTooltip01" formControlName="name" required/>
+            <div class="valid-tooltip">
+                Looks good!
+            </div>
+            <div class="text-danger">
+                <span *ngIf="name && name.errors?.['required']">Name is required</span>
+            </div>
+        </div>
+        <div class="col-md-12 position-relative">
+            <label class="form-label">Email</label>
+            <div class="input-group has-validation">
+                <input class="form-control" type="email" formControlName="email"/>
+            </div>
+            <div class="text-danger" *ngIf="email && email?.invalid">
+                <span *ngIf="email && email.errors?.['required']">Email is required</span>
+                <span *ngIf="email && email.errors?.['email']">Email is not valid</span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Password</label>
+            <input class="form-control" type="password" formControlName="password"/>
+            <div class="text-danger" *ngIf="password && password?.invalid">
+                <span *ngIf="password && password.errors?.['required']">Password is required</span>
+                <span *ngIf="password && password.errors?.['minlength']">
+                    Password must be at least 8 characters long
+                </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Sign Up</button>
+        </div>
+        <div class="col-md-8">
+            <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </form>
+</div>
