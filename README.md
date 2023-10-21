@@ -1,4 +1,4 @@
-# For Learning purpose
+# Challenge myself
 
 This is a web-based application designed to simplify the process of enrolling in online courses for students. 
 It allows students to browse available courses, select their desired courses, and complete the enrollment process with ease.
